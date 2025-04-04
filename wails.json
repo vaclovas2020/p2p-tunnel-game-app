@@ -1,0 +1,13 @@
+{
+  "$schema": "https://wails.io/schemas/config.v2.json",
+  "name": "p2p-tunnel-game-app",
+  "outputfilename": "p2p-tunnel-game-app",
+  "frontend:install": "npm install",
+  "frontend:build": "npm run build",
+  "frontend:dev:watcher": "npm run dev",
+  "frontend:dev:serverUrl": "auto",
+  "author": {
+    "name": "vaclovas2020",
+    "email": "vaclovas.lapinskis@gmail.com"
+  }
+}
