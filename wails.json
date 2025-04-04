@@ -1,6 +1,13 @@
 {
   "$schema": "https://wails.io/schemas/config.v2.json",
-  "name": "p2p-tunnel-game-app",
+  "name": "P2P Tunnel Game",
+  "info": {
+    "productName": "P2P Tunnel Game",
+    "productVersion": "1.0.0",
+    "companyName": "Vaclovas Lapinskis",
+    "copyright": "Copyright (c) 2025 Vaclovas Lapinskis",
+    "comments": "2D Game for developers"
+  },
   "outputfilename": "p2p-tunnel-game-app",
   "frontend:install": "npm install",
   "frontend:build": "npm run build",
