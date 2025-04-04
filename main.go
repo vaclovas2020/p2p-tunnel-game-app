@@ -6,6 +6,7 @@ import (
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/options"
 	"github.com/wailsapp/wails/v2/pkg/options/assetserver"
+	"github.com/wailsapp/wails/v2/pkg/runtime"
 )
 
 //go:embed all:frontend/dist
@@ -27,8 +28,17 @@ func main() {
 		},
 		BackgroundColour: options.NewRGB(255, 255, 255),
 		OnStartup:        app.startup,
+		OnShutdown:       app.shutdown,
 		SingleInstanceLock: &options.SingleInstanceLock{
 			UniqueId: "github.com/vaclovas2020/p2p-tunnel-game-app",
+			OnSecondInstanceLaunch: func(secondInstanceData options.SecondInstanceData) {
+				_, _ = runtime.MessageDialog(app.ctx, runtime.MessageDialogOptions{
+					Type:          runtime.ErrorDialog,
+					Title:         "Application Error",
+					Message:       "Only one instance of the application is allowed. Aborting.",
+					DefaultButton: "OK",
+				})
+			},
 		},
 		Bind: []any{
 			app,
