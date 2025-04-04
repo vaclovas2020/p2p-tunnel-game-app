@@ -1,4 +1,4 @@
-module p2p-tunnel-game-app
+module github.com/vaclovas2020/p2p-tunnel-game-app
 
 go 1.23
 
