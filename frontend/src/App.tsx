@@ -6,7 +6,7 @@ function App() {
     const [gameStarted, setGameStarted] = useState(false);
 
     return (
-        <div className="w-full h-[100dvh]">
+        <div className="w-full h-[100dvh] font-roboto noselect">
             {!gameStarted && (<Welcome />)}
         </div>
     )
