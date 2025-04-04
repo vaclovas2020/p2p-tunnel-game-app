@@ -1,11 +1,13 @@
-import logo from './assets/images/appicon.png';
+import { useState } from "react"
+import Welcome from "./pages/Welcome";
 
 function App() {
+
+    const [gameStarted, setGameStarted] = useState(false);
+
     return (
-        <div id="App">
-            <div className="flex">
-                <img className="w-full h-auto" src={logo} alt="Logo" />
-            </div>
+        <div className="w-full h-[100dvh]">
+            {!gameStarted && (<Welcome />)}
         </div>
     )
 }

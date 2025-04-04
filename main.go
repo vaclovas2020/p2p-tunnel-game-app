@@ -17,14 +17,19 @@ func main() {
 
 	// Create application with options
 	err := wails.Run(&options.App{
-		Title:  "P2P Tunnel Game",
-		Width:  1024,
-		Height: 768,
+		Title:     "P2P Tunnel Game",
+		Width:     1024,
+		Height:    768,
+		MinWidth:  1024,
+		MinHeight: 768,
 		AssetServer: &assetserver.Options{
 			Assets: assets,
 		},
 		BackgroundColour: options.NewRGB(255, 255, 255),
 		OnStartup:        app.startup,
+		SingleInstanceLock: &options.SingleInstanceLock{
+			UniqueId: "github.com/vaclovas2020/p2p-tunnel-game-app",
+		},
 		Bind: []any{
 			app,
 		},
